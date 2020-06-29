@@ -14,9 +14,19 @@ import com.logistic.service.model.Product;
 
 public class OrderVO {
 	
+	private Integer clientId;
 	private Date date;
 	private String direction;
-	private List<Product> products;
+	private String state_order;
+	private List<ProductVO> products;
+	
+	public Integer getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(Integer clientId) {
+		this.clientId = clientId;
+	}
 
 	public Date getDate() {
 		return date;
@@ -34,12 +44,20 @@ public class OrderVO {
 		this.direction = direction;
 	}
 
-	public List<Product> getProducts() {
+	public List<ProductVO> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(List<ProductVO> products) {
 		this.products = products;
+	}
+
+	public String getState_order() {
+		return state_order;
+	}
+
+	public void setState_order(String state_order) {
+		this.state_order = state_order;
 	}
 	
 }

@@ -15,7 +15,7 @@ public class BillVO implements Serializable{
 
 	private Date date;
 	private Integer orderId;
-	private List<Product> product;
+	private List<ProductVO> product;
 
 	public Date getDate() {
 		return date;
@@ -33,11 +33,11 @@ public class BillVO implements Serializable{
 		this.orderId = orderId;
 	}
 
-	public List<Product> getProduct() {
+	public List<ProductVO> getProduct() {
 		return product;
 	}
 
-	public void setProduct(List<Product> product) {
+	public void setProduct(List<ProductVO> product) {
 		this.product = product;
 	}
 

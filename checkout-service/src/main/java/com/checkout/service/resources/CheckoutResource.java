@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.checkout.service.producer.Producer;
-import com.checkout.service.resources.vo.BillVO;
 import com.checkout.service.resources.vo.OrderVO;
 
 @RestController

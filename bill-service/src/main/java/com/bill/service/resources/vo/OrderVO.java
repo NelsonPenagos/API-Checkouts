@@ -1,4 +1,4 @@
-package com.checkout.service.resources.vo;
+package com.bill.service.resources.vo;
 
 import java.util.Date;
 import java.util.List;
@@ -12,19 +12,10 @@ import java.util.List;
 
 public class OrderVO {
 	
-	private Integer clientId;
 	private Date date;
 	private String direction;
 	private String state_order;
 	private List<ProductVO> products;
-	
-	public Integer getClientId() {
-		return clientId;
-	}
-
-	public void setClientId(Integer clientId) {
-		this.clientId = clientId;
-	}
 
 	public Date getDate() {
 		return date;

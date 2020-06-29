@@ -1,6 +1,6 @@
-package com.checkout.service.resources.vo;
+package com.bill.service.resources.vo;
 
-public class Product {
+public class ProductVO {
 
 	private Integer id;
 	private Integer quantity;
@@ -13,7 +13,7 @@ public class Product {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}

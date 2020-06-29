@@ -1,10 +1,11 @@
-package com.bill.service.resources.vo;
+package com.checkout.service.resources.vo;
 
-public class Product {
+public class ProductVO {
 
 	private Integer id;
 	private Integer quantity;
-	private Float cost;	
+	private Float cost;
+	private OrderVO order;
 
 	public Integer getId() {
 		return id;
@@ -28,6 +29,14 @@ public class Product {
 
 	public void setCost(Float cost) {
 		this.cost = cost;
+	}
+
+	public OrderVO getOrder() {
+		return order;
+	}
+
+	public void setOrder(OrderVO order) {
+		this.order = order;
 	}
 
 }

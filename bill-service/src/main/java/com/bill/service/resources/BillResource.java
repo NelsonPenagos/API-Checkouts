@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bill.service.model.Bill;
 import com.bill.service.resources.vo.BillVO;
-import com.bill.service.resources.vo.Product;
+import com.bill.service.resources.vo.ProductVO;
 import com.bill.service.services.BillService;
 
 import io.swagger.annotations.Api;
@@ -44,7 +44,7 @@ public class BillResource {
 	public ResponseEntity<Bill> createBill(@RequestBody BillVO billVo) {
 		Bill bill = new Bill();
 		bill.setDate(billVo.getDate());
-		//bill.setOrderId(billVo.getOrderId());
+		bill.setOrderId(billVo.getOrderId());
 		bill.setTotal(getTotal(billVo.getProduct()));
 		return new ResponseEntity<Bill>(this.billService.create(bill), HttpStatus.CREATED);
 	}
@@ -55,9 +55,9 @@ public class BillResource {
 	 * @param productVo
 	 * @return Double
 	 */
-	public Double getTotal(List<Product> productVo) {
+	public Double getTotal(List<ProductVO> productVo) {
 		Double total = 0.0;
-		for (Product product : productVo) {
+		for (ProductVO product : productVo) {
 			total += product.getCost().doubleValue();
 		}
 		return total;
