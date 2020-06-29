@@ -1,0 +1,32 @@
+server:
+  port: 8098
+
+eureka:         
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:
+  application:
+    name: bill-service
+  datasource: 
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      generate-ddl: true
+    show-sql: true
+
+management:
+  security:
+    enabled: false

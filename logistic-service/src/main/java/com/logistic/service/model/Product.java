@@ -1,5 +1,6 @@
-package com.checkout.service.model;
+package com.logistic.service.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,16 +10,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order_products")
+@Table(name = "ORDERS_PRODUCTS")
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer quantity;
-	private Float cost;
-	
-	@ManyToOne
+	private Float cost;	
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "clientId")
 	private Order order;
 

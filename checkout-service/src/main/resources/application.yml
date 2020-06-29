@@ -1,0 +1,30 @@
+server:
+  port: 8090
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5  
+
+spring:
+  application:
+    name: checkout-service 
+  rabbitmq:
+    addresses: localhost:5672
+    dynamic: true
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+    virtual-host: /
+
+management:
+  security:
+    enabled: false 

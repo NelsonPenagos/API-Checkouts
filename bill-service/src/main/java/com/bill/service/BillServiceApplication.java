@@ -1,4 +1,4 @@
-package com.checkout.service;
+package com.bill.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class CheckoutServiceApplication {
+public class BillServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CheckoutServiceApplication.class, args);
+		SpringApplication.run(BillServiceApplication.class, args);
 	}
 
 }

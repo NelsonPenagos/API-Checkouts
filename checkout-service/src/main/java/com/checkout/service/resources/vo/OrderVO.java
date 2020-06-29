@@ -1,17 +1,8 @@
 package com.checkout.service.resources.vo;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.checkout.service.model.Product;
+import java.util.List;
 
 /**
  * Class that represents the table ORDERS
@@ -20,11 +11,11 @@ import com.checkout.service.model.Product;
  *
  */
 
-public class OrderVO {
+public class OrderVO implements Serializable{
 	
 	private Date date;
 	private String direction;
-	private ArrayList<Product> products;
+	private List<Product> products;
 
 	public Date getDate() {
 		return date;
@@ -42,11 +33,11 @@ public class OrderVO {
 		this.direction = direction;
 	}
 
-	public ArrayList<Product> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(ArrayList<Product> products) {
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 	

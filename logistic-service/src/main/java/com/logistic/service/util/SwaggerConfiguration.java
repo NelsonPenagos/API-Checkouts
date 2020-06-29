@@ -1,4 +1,4 @@
-package com.checkout.service.util;
+package com.logistic.service.util;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;

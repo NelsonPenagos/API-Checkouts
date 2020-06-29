@@ -1,4 +1,4 @@
-package com.checkout.service;
+package com.logistic.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

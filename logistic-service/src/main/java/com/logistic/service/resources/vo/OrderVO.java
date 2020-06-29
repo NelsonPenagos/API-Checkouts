@@ -1,14 +1,9 @@
-package com.checkout.service.model;
+package com.logistic.service.resources.vo;
 
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.logistic.service.model.Product;
 
 /**
  * Class that represents the table ORDERS
@@ -16,25 +11,12 @@ import javax.persistence.Table;
  * @author nelson-penagos
  *
  */
-@Entity
-@Table(name = "order")
-public class Order {
+
+public class OrderVO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer clientId;
 	private Date date;
-	private String direction;	
-	@OneToMany(mappedBy = "order")
+	private String direction;
 	private List<Product> products;
-
-	public Integer getClientId() {
-		return clientId;
-	}
-
-	public void setClientId(Integer clientId) {
-		this.clientId = clientId;
-	}
 
 	public Date getDate() {
 		return date;

@@ -3,5 +3,4 @@ spring:
     name: eureka-server
   cloud:
     config:
-      failFast: true
-      uri: http://config-server:8888
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}

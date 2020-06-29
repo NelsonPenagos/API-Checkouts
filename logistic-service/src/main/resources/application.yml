@@ -1,0 +1,40 @@
+server:
+  port: 9098
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5  
+
+spring:
+  application:
+    name: logistic-service 
+  rabbitmq:
+    addresses: localhost:5672
+    dynamic: true
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+    virtual-host: / 
+  datasource: 
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      generate-ddl: true
+    show-sql: true
+
+management:
+  security:
+    enabled: false  	
