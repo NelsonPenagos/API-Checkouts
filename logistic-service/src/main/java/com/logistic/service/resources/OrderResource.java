@@ -114,8 +114,8 @@ public class OrderResource {
 		}
 		order.setProducts(listProduct);
 		this.orderService.create(order);
-		orderVo.setClientId(order.getClientId());
-		createBill(orderVo);
+		//orderVo.setClientId(order.getClientId());
+		//createBill(orderVo);
 
 	}
 

@@ -23,6 +23,6 @@ public class CheckoutResource {
 	@RequestMapping("/checkout")
 	public String sendMsg(@RequestBody OrderVO orderVO) {
 		producer.orderMsg(orderVO);
-		return "Funciona";
+		return "Se ha creado su Orden";
 	}
 }
