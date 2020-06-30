@@ -1,0 +1,71 @@
+version: '3'
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  dbpostgresql:
+    image: postgres
+    network_mode: host
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=root123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+
+  eureka:
+    build: ./checkout-eureka-server
+    ports:
+      - "8761:8761"
+  #Back-end Spring Boot Application
+  checkout-app: 
+    container_name: checkout-service
+    network_mode: host
+    image: checkout-service  
+    build: ./checkout-service
+    environment:
+      - DB_SERVER=dbpostgresql
+      - POSTGRES_PASSWORD=root123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "8090:8090"
+    depends_on:
+      - rabbitmq
+      - eureka
+  logistic-app: 
+    container_name: logistic-service
+    network_mode: host
+    image: logistic-service  
+    build: ./logistic-service
+    environment:
+      - DB_SERVER=dbpostgresql
+      - POSTGRES_PASSWORD=root123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "9098:9098"
+    depends_on:
+      - rabbitmq
+      - dbpostgresql
+      - eureka
+  bill-app: 
+    container_name: bill-service
+    network_mode: host
+    image: bill-service
+    build: ./bill-service
+    environment:
+      - DB_SERVER=dbpostgresql
+      - POSTGRES_PASSWORD=root123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "8098:8098"
+    depends_on:
+      - dbpostgresql
+      - eureka
+

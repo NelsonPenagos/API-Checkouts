@@ -15,6 +15,11 @@ public class CheckoutResource {
 	@Autowired
 	Producer producer;
 	
+	/**
+	 * Method to send message RabbitMQ
+	 * @param orderVO
+	 * @return
+	 */
 	@RequestMapping("/checkout")
 	public String sendMsg(@RequestBody OrderVO orderVO) {
 		producer.orderMsg(orderVO);

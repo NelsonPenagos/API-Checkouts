@@ -25,9 +25,9 @@ spring:
     username: guest
     virtual-host: / 
   datasource: 
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: root123
+    url: jdbc:postgresql://${DB_SERVER}/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
