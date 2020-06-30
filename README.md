@@ -29,3 +29,24 @@ A continuación se hace una breve descripción de la arquitectura utilizada y la
 ```
 docker-compose up --build
 ```
+
+# Probar en Postman
+
+```
+http://127.0.0.1:8090/api/checkout
+```
+
+```rest
+{
+  "date": "2020-06-28T17:27:27.854Z",
+  "direction": "Cra Falsa",
+  "products": [
+    {
+      "cost": 99999,
+      "id": 2,
+      "quantity": 10
+    }
+  ]
+}
+
+```
